@@ -2,10 +2,18 @@
 //   return new Response(`request method: ${request.method}`)
 // }
 
+// export async function handleRequest(request) {
+//   return new Response('Hello worker!', {
+//     headers: { 'content-type': 'text/plain' },
+//   });
+// }
 export async function handleRequest(request) {
-  return new Response('Hello worker!', {
-    headers: { 'content-type': 'text/plain' },
-  });
+  const value = await NAMESPACE.get([{aa:'11'}], {type: "json"})
+  if (value === null) {
+    return new Response("Value not found", {status: 404})
+  }
+
+  return new Response(value)
 }
 // async function handleRequest(request) {
 //   let response;
