@@ -1,10 +1,13 @@
 name = "my-typescript-worker"
 type = "javascript"
 zone_id = ""
-account_id = ""
+account_id = "1518073320563923a27a8d222e26ffe3"
 route = ""
 workers_dev = true
 compatibility_date = "2022-04-03"
+kv_namespaces = [ 
+  { binding = "MY_KV", id = "1518073320563923a27a8d222e26ffe3" }
+]
 
 [build]
 command = "npm install && npm run build"
